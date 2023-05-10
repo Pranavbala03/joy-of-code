@@ -2025,7 +2025,8 @@ We're going to see why generics are awesome in a moment.
 
   // ...
 
-  let todos = useStorage<ITodo[]>('todos', [])
+  let todos = useStorage<ITodo[]>('todos()', [])
+  //todos has to be a function, else there will be a type error when a filter is applied on the array element
 
   let selectedFilter: FiltersType = 'all'
 
